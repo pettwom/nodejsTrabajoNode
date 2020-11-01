@@ -1,0 +1,12 @@
+{
+    "folders": [
+		{
+			"name": "CODIGO",
+			"path": ".."
+		},
+		{
+			"name": "htdocs",
+			"path": "..\\..\\..\\ServidorWeb\\htdocs"
+		}
+	]
+}

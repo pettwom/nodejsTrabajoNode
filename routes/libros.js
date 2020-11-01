@@ -5,20 +5,15 @@ const _ = require('lodash');
 
 const app = express();
 
-// const { verifyToken, verifyRole } = require('../middleware/auth');
-
 const Libro = require('../models').Libro;
 
 
 app.get("/books", (req, res) => {
-    // app.get('/books', [verifyToken, verifyRole], (req, res) => {
     let from = req.query.from || 0;
     from = Number(from);
     let limit = req.query.limit || 5;
     limit = Number(limit);
-    let defaultFilters = {
-        // state: true
-    };
+
     Libro.findAndCountAll({
             limit: limit,
             offset: from,
@@ -44,6 +39,7 @@ app.post('/books', (req, res) => {
     let body = req.body;
 
     Libro.create({
+            autor_id: body.autor_id,
             titulo: body.titulo,
             descripcion: body.descripcion,
             precio: body.precio,
