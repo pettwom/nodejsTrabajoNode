@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const Libro_carrito = require('../models').Libro_carrito;
+const Libro_carrito = require('../models').Libro_Carrito;
 //añadir compra
 app.post('/book_trolley', (req, res) => {
     let body = req.body;
